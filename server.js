@@ -1,6 +1,6 @@
 const express = require("express")
 const app = express()
-const port = process.env.PORT || 8080
+const config = require("./config")
 const expressLayouts = require("express-ejs-layouts")
 
 app.set("view engine", "ejs")
@@ -14,6 +14,6 @@ app.get("/", (req, res) => {
   res.render("home")
 })
 
-app.listen(port, () => {
-  console.log(`listening on port ${port}`)
+app.listen(config.port, () => {
+  console.log(`listening on port ${config.port}`)
 })
